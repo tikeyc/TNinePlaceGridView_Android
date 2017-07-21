@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/userInfoSuperView"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <com.tikeyc.tnineplacegridview_android.libs.CircleImageView
+            android:id="@+id/imageViewIcon"
+            android:background="@drawable/corners_bg"
+            android:src="@mipmap/glenceluanch"
+            android:layout_marginLeft="8dp"
+            android:layout_centerVertical="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/textViewNickName"
+            android:text="昵称"
+            android:layout_toRightOf="@+id/imageViewIcon"
+            android:layout_marginLeft="10dp"
+            android:layout_alignTop="@+id/imageViewIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <com.tikeyc.tnineplacegridviewlibrary.TNinePlaceGridView.TNinePlaceGridView
+        android:id="@+id/ninePlaceGridView"
+        android:layout_below="@+id/userInfoSuperView"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.tikeyc.tnineplacegridviewlibrary.TNinePlaceGridView.TNinePlaceGridView>
+
+
+</RelativeLayout>
