@@ -9,19 +9,20 @@ Android版九宫格、图片浏览等
 # 添加依赖：
 
 1——：gradle
-Step 1：添加maven { url 'https://jitpack.io' } 到project的build.gradle     allprojects {
-repositories {
-...
-maven { url 'https://jitpack.io' }
-}
-}
+Step 1：添加maven { url 'https://jitpack.io' } 到project的build.gradle         
+allprojects {    
+   repositories {    
+      ...    
+      maven { url 'https://jitpack.io' }    
+   }    
+}    
 
-Step 2:compile 'com.github.tikeyc:TNinePlaceGridView_Android:v1.0'到你app的build.gradle
-dependencies {
-compile 'com.github.tikeyc:TNinePlaceGridView_Android:v1.0'
-}
-2——：或者直接下载完整项目，import一个module：tnineplacegridviewlibrary
+Step 2:compile 'com.github.tikeyc.TNinePlaceGridView_Android:tnineplacegridviewlibrary:v1.0'到你app的build.gradle    
+dependencies {     
+    compile 'com.github.tikeyc.TNinePlaceGridView_Android:tnineplacegridviewlibrary:v1.0'    
+}    
+2——：或者直接下载完整项目，import一个module：tnineplacegridviewlibrary    
 
-#如何使用：
+#如何使用：    
 
 ninePlaceGridView.setImageNames(imageNames)
