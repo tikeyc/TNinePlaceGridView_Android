@@ -1,6 +1,8 @@
 # TNinePlaceGridView_Android
 Android版九宫格、图片浏览等    
 
+iOS版：https://github.com/tikeyc/TNinePlaceGridView  
+
 ![image](https://github.com/tikeyc/TikeycAndroid/blob/master/Readme/screen2.gif)      
 
 详情访问我的简书：http://www.jianshu.com/p/99a2a72d8fef   
