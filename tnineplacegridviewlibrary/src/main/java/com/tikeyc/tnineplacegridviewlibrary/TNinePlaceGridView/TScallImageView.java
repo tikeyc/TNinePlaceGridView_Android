@@ -25,7 +25,6 @@ public class TScallImageView extends android.support.v7.widget.AppCompatImageVie
     public List<Object> imageIds;//外部设置
     public int currentIndex;//外部设置
     public TImageListBgView imageListBgView;
-    public ScaleType imgScaleType = ScaleType.FIT_CENTER;//外部设置,默认是：FIT_CENTER
 
     public TScallImageView(Context context) {
         super(context);
@@ -82,7 +81,6 @@ public class TScallImageView extends android.support.v7.widget.AppCompatImageVie
 //        originalRect = new TRect(outLocation[0],outLocation[1] - TKCUtils.getStatusBarHeight(getContext()),getWidth(),getHeight());
         originalRect = new TRect(outLocation[0],outLocation[1],getWidth(),getHeight());
         imageListBgView = new TImageListBgView(getContext(),originalRect,this.imageId,this.imageIds,currentIndex);
-        imageListBgView.imgScaleType = imgScaleType;
         imageListBgView.imageId = imageId;
         imageListBgView.originalRects = getOriginalRects();
         imageListBgView.startTransform(TScallImageView.STATE_TRANSFORM_IN);
