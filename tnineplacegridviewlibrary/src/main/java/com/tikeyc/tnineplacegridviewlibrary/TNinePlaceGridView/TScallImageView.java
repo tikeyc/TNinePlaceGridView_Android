@@ -3,6 +3,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,12 +18,12 @@ public class TScallImageView extends android.support.v7.widget.AppCompatImageVie
     public static final int STATE_TRANSFORM_IN = 1;
     public static final int STATE_TRANSFORM_OUT = 2;
 
-    public TNinePlaceGridView ninePlaceGridView;
-    private TRect originalRect;
-    private List<TRect> originalRects;
-    public Integer imageId;
-    public List<Integer> imageIds;
-    public int currentIndex;
+    public ViewGroup ninePlaceGridView;//外部设置
+    private TRect originalRect;//得到的第一个图片相对于window的位置
+    private List<TRect> originalRects;//得到的第所有图片相对于window的位置
+    public Object imageId;//外部设置
+    public List<Object> imageIds;//外部设置
+    public int currentIndex;//外部设置
     public TImageListBgView imageListBgView;
 
     public TScallImageView(Context context) {

@@ -11,6 +11,8 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 /**
@@ -22,14 +24,14 @@ public class TNinePlaceGridView extends GridView {
     final static int itemGap = 10;
     int itemWidth = (TRect.getScreenWidth(getContext()) - 68*2 - itemGap*2)/3;
 
-    private List<Integer> imageNames;
+    private List<Object> imageNames;
     private GridViewAdapter gridViewAdapter;
 
-    public List<Integer> getImageNames() {
+    public List<Object> getImageNames() {
         return imageNames;
     }
 
-    public void setImageNames(List<Integer> imageNames) {
+    public void setImageNames(List<Object> imageNames) {
         this.imageNames = imageNames;
 
         int rowNum = imageNames.size()/3;
@@ -109,7 +111,7 @@ public class TNinePlaceGridView extends GridView {
     public class GridViewAdapter extends BaseAdapter {
 
         private Context context;
-        public List<Integer> imageNames;
+        public List<Object> imageNames;
         public TNinePlaceGridView ninePlaceGridView;
 
         public GridViewAdapter(Context context) {
@@ -143,9 +145,13 @@ public class TNinePlaceGridView extends GridView {
             }
 
             TScallImageView imageView = (TScallImageView) view;
-            Integer imgURL = imageNames.get(i);
+            Object imgURL = imageNames.get(i);
 //            Picasso.with(context).load(imgURL).into(imageView);
-            imageView.setImageResource(imgURL);
+            if (imgURL instanceof Integer) {
+                imageView.setImageResource((Integer) imgURL);
+            } else {
+                Picasso.with(getContext()).load((String) imgURL).into(imageView);
+            }
             imageView.imageId = imgURL;
             imageView.currentIndex = i;
             imageView.imageIds = imageNames;

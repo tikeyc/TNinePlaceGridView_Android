@@ -20,6 +20,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 /**
@@ -31,8 +33,8 @@ public class TImageListBgView extends RelativeLayout {
     public int mState = TScallImageView.STATE_NORMAL;
     private TRect originalRect;
     public List<TRect> originalRects;
-    public Integer imageId;
-    public List<Integer> imageIds;
+    public Object imageId;
+    public List<Object> imageIds;
     public int currentIndex;
     private ImageView animationIV;
     private LinearLayout gridViewBgView;
@@ -40,7 +42,7 @@ public class TImageListBgView extends RelativeLayout {
     private TPageHorizatalScrollView horizontalScrollView;
     private TPageControl pageControl;
 
-    public TImageListBgView(Context context, TRect originalRect,Integer imageId,List<Integer> imageIds,int currentIndex) {
+    public TImageListBgView(Context context, TRect originalRect,Object imageId,List<Object> imageIds,int currentIndex) {
         super(context);
         this.originalRect = originalRect;
         this.imageId = imageId;
@@ -120,7 +122,12 @@ public class TImageListBgView extends RelativeLayout {
         params.topMargin = originalRect.getTop();
         addView(animationIV,params);
 //        Picasso.with(getContext()).load("http://ww2.sinaimg.cn/mw690/9e6995c9gw1f2uu70bzohj209q06g3yw.jpg").into(animationIV);
-        animationIV.setImageResource(imageId);
+        if (imageId instanceof Integer) {
+            animationIV.setImageResource((Integer) imageId);
+        } else {
+            Picasso.with(getContext()).load((String) imageId).into(animationIV);
+        }
+
     }
 
     private void initHorizontalScrollView() {
@@ -140,7 +147,12 @@ public class TImageListBgView extends RelativeLayout {
                     currentIndex = 0;
                 }
                 Log.e("TAG","currentIndex" + currentIndex);
-                animationIV.setImageResource(imageIds.get(currentIndex));
+                if (imageId instanceof Integer) {
+                    animationIV.setImageResource((Integer) imageIds.get(currentIndex));
+                } else {
+                    Picasso.with(getContext()).load((String) imageIds.get(currentIndex)).into(animationIV);
+                }
+
                 originalRect = originalRects.get(currentIndex);
                 pageControl.setCurrentPage(currentIndex);
             }

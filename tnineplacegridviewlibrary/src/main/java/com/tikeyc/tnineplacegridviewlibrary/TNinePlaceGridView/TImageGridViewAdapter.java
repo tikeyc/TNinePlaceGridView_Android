@@ -7,6 +7,7 @@ import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
 import com.tikeyc.tnineplacegridviewlibrary.TNinePlaceGridView.photoview.OnViewTapListener;
 import com.tikeyc.tnineplacegridviewlibrary.TNinePlaceGridView.photoview.PhotoView;
 
@@ -19,7 +20,7 @@ import java.util.List;
 public class TImageGridViewAdapter extends BaseAdapter {
 
     Context context;
-    public List<Integer> imageIds;
+    public List<Object> imageIds;
 
     public TImageGridViewAdapter(Context context) {
         this.context = context;
@@ -63,7 +64,12 @@ public class TImageGridViewAdapter extends BaseAdapter {
 
         PhotoView imageView = (PhotoView) view;
 //        Picasso.with(context).load("http://ww2.sinaimg.cn/mw690/9e6995c9gw1f2uu70bzohj209q06g3yw.jpg").into(imageView);
-        imageView.setImageResource(imageIds.get(i));
+        if (imageIds.get(i) instanceof Integer) {
+            imageView.setImageResource((Integer) imageIds.get(i));
+        } else {
+            Picasso.with(context).load((String) imageIds.get(i)).into(imageView);
+        }
+
 
         return view;
     }

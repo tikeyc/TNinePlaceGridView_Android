@@ -36,15 +36,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
 
-        List<List<Integer>> imageNames2D = new ArrayList<List<Integer>>();
+        List<List<Object>> imageNames2D = new ArrayList<List<Object>>();
         for (int i = 0; i < 30; i++) {
-            ArrayList<Integer> imageNames = new ArrayList<Integer>();
+            ArrayList<Object> imageNames = new ArrayList<Object>();
             Random random = new Random();
             for (int j = 0; j <= random.nextInt(8); j++) {
                 if (j%2 == 0) {
                     imageNames.add(R.mipmap.beauty);
+//                    imageNames.add("http://7xi8d6.com1.z0.glb.clouddn.com/20171011084856_0YQ0jN_joanne_722_11_10_2017_8_39_5_505.jpeg");
                 } else {
                     imageNames.add(R.mipmap.glenceluanch);
+//                    imageNames.add("http://7xi8d6.com1.z0.glb.clouddn.com/2017-10-10-sakura.gun_10_10_2017_12_33_34_751.jpg");
                 }
             }
             imageNames2D.add(imageNames);
@@ -77,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     private class ListViewAdapter extends BaseAdapter {
 
         private Context context;
-        public List<List<Integer>> imageNames2D;
+        public List<List<Object>> imageNames2D;
 
         public ListViewAdapter(Context context) {
             this.context = context;
@@ -103,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
             CircleImageView imageViewIcon;
             TextView textViewNickName;
             TNinePlaceGridView ninePlaceGridView;
+
         }
 
         @Override
@@ -120,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             } else  {
                 viewHelper = (ViewHelper) view.getTag();
             }
-            List<Integer> imageNames = this.imageNames2D.get(i);
+            List<Object> imageNames = this.imageNames2D.get(i);
             viewHelper.ninePlaceGridView.setImageNames(imageNames);
 
             return view;
