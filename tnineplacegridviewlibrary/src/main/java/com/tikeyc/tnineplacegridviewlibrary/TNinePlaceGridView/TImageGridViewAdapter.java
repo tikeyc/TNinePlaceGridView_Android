@@ -21,6 +21,7 @@ public class TImageGridViewAdapter extends BaseAdapter {
 
     Context context;
     public List<Object> imageIds;
+    public ImageView.ScaleType imgScaleType = ImageView.ScaleType.FIT_CENTER;//外部设置,默认是：FIT_CENTER
 
     public TImageGridViewAdapter(Context context) {
         this.context = context;
@@ -48,7 +49,7 @@ public class TImageGridViewAdapter extends BaseAdapter {
         if (view == null) {
             view = new PhotoView(context);
             PhotoView imageView = (PhotoView) view;
-            imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            imageView.setScaleType(imgScaleType);
             imageView.setMinimumScale(0.5f);
             imageView.setOnViewTapListener(new OnViewTapListener() {
                 @Override

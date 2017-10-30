@@ -36,6 +36,7 @@ public class TImageListBgView extends RelativeLayout {
     public Object imageId;
     public List<Object> imageIds;
     public int currentIndex;
+    public ImageView.ScaleType imgScaleType;//外部设置
     private ImageView animationIV;
     private LinearLayout gridViewBgView;
     private GridView gridView;
@@ -116,7 +117,7 @@ public class TImageListBgView extends RelativeLayout {
     private void initAnimationIV() {
         animationIV = new ImageView(getContext());
 //        imageView.setBackgroundColor(Color.RED);
-        animationIV.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        animationIV.setScaleType(imgScaleType);
         LayoutParams params = new LayoutParams(originalRect.getWidth(),originalRect.getHeight());
         params.leftMargin = originalRect.getLeft();
         params.topMargin = originalRect.getTop();
