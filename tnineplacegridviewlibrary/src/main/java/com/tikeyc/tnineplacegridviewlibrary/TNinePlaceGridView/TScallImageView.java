@@ -58,12 +58,17 @@ public class TScallImageView extends android.support.v7.widget.AppCompatImageVie
         List<TRect> originalRects = new ArrayList<TRect>();
         int count = ninePlaceGridView.getChildCount();
         for (int i = 0; i < count; i++) {
-            TScallImageView scallImageView = (TScallImageView) ninePlaceGridView.getChildAt(i);
-            int[] outLocation = new int[2];
-            scallImageView.getLocationInWindow(outLocation);
-            Log.e("TAG","outLocation[0]:" + outLocation[0] + "outLocation[1]:" + outLocation[1]);
-            TRect tRect = new TRect(outLocation[0],outLocation[1],scallImageView.getWidth(),scallImageView.getHeight());
-            originalRects.add(tRect);
+            if (ninePlaceGridView.getChildAt(i) instanceof TScallImageView) {
+                TScallImageView scallImageView = (TScallImageView) ninePlaceGridView.getChildAt(i);
+                int[] outLocation = new int[2];
+                scallImageView.getLocationInWindow(outLocation);
+                Log.e("TAG","outLocation[0]:" + outLocation[0] + "outLocation[1]:" + outLocation[1]);
+                TRect tRect = new TRect(outLocation[0],outLocation[1],scallImageView.getWidth(),scallImageView.getHeight());
+                originalRects.add(tRect);
+            } else {
+                continue;
+            }
+
         }
         this.originalRects = originalRects;
         return originalRects;
