@@ -10,21 +10,26 @@ iOS版：https://github.com/tikeyc/TNinePlaceGridView
 
 # 添加依赖：
 
-1——：gradle
-Step 1：添加maven { url 'https://jitpack.io' } 到project的build.gradle         
+###方式一：gradle
+####Step 1：添加maven { url 'https://jitpack.io' } 到project的build.gradle   
+```
 allprojects {    
    repositories {    
       ...    
       maven { url 'https://jitpack.io' }    
    }    
 }    
-
-Step 2:compile 'com.github.tikeyc.TNinePlaceGridView_Android:tnineplacegridviewlibrary:v1.1.1'到你app的build.gradle    
+```
+####Step 2: compile 'com.github.tikeyc.TNinePlaceGridView_Android:tnineplacegridviewlibrary:v1.1.1'到你app的build.gradle    
+```
 dependencies {     
     compile 'com.github.tikeyc.TNinePlaceGridView_Android:tnineplacegridviewlibrary:v1.1.1'    
-}    
-2——：或者直接下载完整项目，import一个module：tnineplacegridviewlibrary    
+}  
+```
+
+###方式二：或者直接下载完整项目，import一个module：tnineplacegridviewlibrary    
 
 #如何使用：    
 
+TNinePlaceGridView ninePlaceGridView = (TNinePlaceGridView) view.findViewById(R.id.ninePlaceGridView);
 ninePlaceGridView.setImageNames(imageNames)
