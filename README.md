@@ -19,9 +19,9 @@ allprojects {
    }    
 }    
 
-Step 2:compile 'com.github.tikeyc.TNinePlaceGridView_Android:tnineplacegridviewlibrary:v1.1'到你app的build.gradle    
+Step 2:compile 'com.github.tikeyc.TNinePlaceGridView_Android:tnineplacegridviewlibrary:v1.1.1'到你app的build.gradle    
 dependencies {     
-    compile 'com.github.tikeyc.TNinePlaceGridView_Android:tnineplacegridviewlibrary:v1.1'    
+    compile 'com.github.tikeyc.TNinePlaceGridView_Android:tnineplacegridviewlibrary:v1.1.1'    
 }    
 2——：或者直接下载完整项目，import一个module：tnineplacegridviewlibrary    
 
