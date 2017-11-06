@@ -33,6 +33,8 @@ dependencies {
 
 ```
 · List<List<Object>> imageNames2D = new ArrayList<List<Object>>();
+  List<Object> imageNames = new ArrayList<Object>();
+  imageNames2D.add(imageNames);
   imageNames.add(Object);
 · TNinePlaceGridView ninePlaceGridView = (TNinePlaceGridView) view.findViewById(R.id.ninePlaceGridView);
 · ninePlaceGridView.setImageNames(imageNames);
