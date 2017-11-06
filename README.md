@@ -37,7 +37,7 @@ TNinePlaceGridView ninePlaceGridView = (TNinePlaceGridView) view.findViewById(R.
 ninePlaceGridView.setImageNames(imageNames);
 如下代码示例：
 
-
+```
 public class MainActivity extends AppCompatActivity {
 
     @ViewInject(R.id.listView)
@@ -149,3 +149,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+```
