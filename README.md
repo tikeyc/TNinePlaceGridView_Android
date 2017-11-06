@@ -31,11 +31,13 @@ dependencies {
 
 如何使用，非常之简单
 
-List<List<Object>> imageNames2D = new ArrayList<List<Object>>();
-imageNames.add(Object);
-TNinePlaceGridView ninePlaceGridView = (TNinePlaceGridView) view.findViewById(R.id.ninePlaceGridView);
-ninePlaceGridView.setImageNames(imageNames);
-如下代码示例：
+```
+· List<List<Object>> imageNames2D = new ArrayList<List<Object>>();
+  imageNames.add(Object);
+· TNinePlaceGridView ninePlaceGridView = (TNinePlaceGridView) view.findViewById(R.id.ninePlaceGridView);
+· ninePlaceGridView.setImageNames(imageNames);
+```       
+如下代码示例：     
 
 ```
 public class MainActivity extends AppCompatActivity {
